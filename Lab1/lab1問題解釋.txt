@@ -1,0 +1,25 @@
+High-level description:
+根據障礙物的位置與機器人的移動，推敲出障礙物的實際位置，根據與其相對位置推測出自己的實際位置。
+主要收集機器人的周邊資訊進行更新，確定出障礙物的位置並描繪地圖可以得到明確的地圖與機器人的位置。
+
+For each of the main steps of the particle filter localization:
+1. Initialization of particle cloud:
+在__init__的地方清空資料，重讀寫地圖和周邊環境可以重新定位自己的位置。
+2.Movement model:
+在update_particles_with_motion_model的地方，可以根據機器人的移動去更新位置，檢測周邊是否有障礙物與障礙物的距離去推測相對的位置並更新particle
+3.Measurement model:
+在update_particle_weights_with_measurement_model的地方，根據likelihood_field去取得周邊資訊並根據機率來更新權重
+4.Resampling:
+在resample_particles的地方，根據更新的權重去重新自己周邊障礙物所在的分布機率
+5.Incorporation of noise:
+
+6.Updating estimated robot pose:
+在update_estimated_robot_pose的地方，重新測量自己的pose好進行下一次的測量。
+
+Challenges:要將演算法實際弄成程式去執行對我來說滿困難的，也許是對演算法不夠了解，因此對於知道每個步驟需要做什麼事，但實際上他所需要的資料或是他需要吐出甚麼資訊讓其他function可以去使用他會是我滿困擾的點，所以會不知道如何下手，也是因為自己沒有提早來做這份作業，導致沒有完成，我會去重新學習這個演算法，並重新寫一份，如果有可以重交的機會，希望可以交出滿意的答案
+
+Future work:希望可以完整地完成這個演算法，希望可以讓他精確地根據移動來確定自己的位置。
+
+Takeaways:
+1.可以將一個演算法完整的呈現算是一個不錯的收穫，表示對於這個演算法有足夠的了解，也對程式上和邏輯有一定的清楚，因此可以將所想要的事情完整的呈現出來，表示如果有其他想讓機器人做的事情在一定程度上也事都可以完成的。
+2.了解機器人的性質，要寫一個程式讓機器人去執行，就必須了解機器人在程式上的需求是什麼，了解這些東西才可以在編寫其他的程式時更順利，否則不夠了解會使得在編寫的過程中卡觀卻不知道問題在哪裡。
