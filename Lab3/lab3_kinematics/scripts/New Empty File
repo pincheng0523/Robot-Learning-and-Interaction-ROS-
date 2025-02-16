@@ -1,0 +1,11 @@
+roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
+roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
+
+
+ roslaunch lab3_kinematics turtlebot3_intersection.launch
+ roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+
+
+roslaunch lab3_kinematics manipulation.launch
+roslaunch turtlebot3_manipulation_moveit_config move_group.launch
