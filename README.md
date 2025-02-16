@@ -4,14 +4,41 @@
 ---
 
 ## 📂 專案內容
-- [HW1](#hw1)：機器人定位 - 粒子濾波 (Particle Filter Localization)
-- [HW2](#hw2)：機器人導航與 SLAM
-- [HW3](#hw3)：機械手臂操控與物件抓取
+- [Lab0](#lab0)：機器人行為編程暖身專案
+- [Lab1](#lab1)：機器人定位 - 粒子濾波 (Particle Filter Localization)
+- [Lab2](#lab2)：機器人導航與 SLAM
+- [Lab3](#lab3)：機械手臂操控與物件抓取
 - [Final Project](#final-project)：TurtleBot3 自駕車路標辨識
+
+## 📌 Lab0：機器人行為編程暖身專案
+
+📌 **目標**：熟悉 **ROS 環境**，並透過 **TurtleBot3 機器人** 在 Gazebo 模擬器中執行基本行為控制，如**行駛方形路徑 (Driving in a Square)** 和 **牆壁跟隨 (Wall Following)**。
+
+### 🔹 主要步驟
+1. **環境設置**
+   - 安裝與設定 ROS。
+   - 透過 Gazebo 模擬器運行 TurtleBot3。
+2. **行駛方形路徑**
+   - 讓機器人移動成方形軌跡，可使用時間控制或 **odometry (/odom topic)**。
+   - 透過 **/cmd_vel** 控制機器人移動。
+3. **牆壁跟隨**
+   - 讓機器人沿著房間牆壁行駛。
+   - 使用 **/scan (LiDAR 感測數據)** 來保持固定距離。
+
+### 🔹 挑戰與解決方案
+- **挑戰**：
+  - ROS 指令與模擬環境的適應。
+  - 感測器噪聲影響機器人行為。
+- **解決方案**：
+  - 使用 **RViz** 進行感測器數據可視化。
+  - 優化控制參數，減少機器人行駛時的誤差。
+
+### 🔹 成果展示
+- 成功讓機器人在 Gazebo 模擬環境內執行 **行駛方形路徑** 和 **牆壁跟隨** 兩種行為。
 
 ---
 
-## 📌 HW1：機器人定位 - 粒子濾波 (Particle Filter Localization)
+## 📌 Lab1：機器人定位 - 粒子濾波 (Particle Filter Localization)
 
 📌 **目標**：透過 **粒子濾波 (Particle Filter, Monte Carlo Localization, MCL)**，解決機器人定位問題，使機器人能夠根據感測器資訊估計自身位置。
 
@@ -36,7 +63,7 @@
 
 ---
 
-## 📌 HW2：機器人導航與 SLAM
+## 📌 Lab2：機器人導航與 SLAM
 
 📌 **目標**：使用 **SLAM (Simultaneous Localization and Mapping)**，讓 TurtleBot3 能夠在未知環境中構建地圖並實現自主導航。
 
@@ -64,7 +91,7 @@ https://drive.google.com/file/d/1x9EPuoEvxqhzUekzj3842dX5swIKTUXX/view?usp=drive
 
 ---
 
-## 📌 HW3：機械手臂操控與物件抓取
+## 📌 Lab3：機械手臂操控與物件抓取
 
 📌 **目標**：學習機械手臂運動控制，並實現機器人手臂的 **TrafficBot** 手勢與 **抓取物件** 的任務。
 
